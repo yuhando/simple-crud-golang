@@ -1,0 +1,74 @@
+{{ define "Registration" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <div>
+        <div>
+            <h2>{{ .Title }}</h2>
+        </div>
+        <div>
+            <form method="POST" action="{{ .Slug }}">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label> Name </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="name" value="{{ .Name }}" {{ .Disabled }} />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label> Address </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <textarea name="address" {{ .Disabled }}>{{ .Address }}</textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label> Identity Number </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="identity_number" value="{{ .IdentityNumber }}" {{ .Disabled }} />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div>
+                                    <label> Amount </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="amount" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div>
+                                    <input type="submit" value="Save" />
+                                    <input type="hidden" name="uid" value="{{ .ID }}" />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+  {{ template "Footer" }}
+{{ end }}

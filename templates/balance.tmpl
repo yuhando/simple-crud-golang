@@ -1,0 +1,30 @@
+{{ define "Balance" }}
+  {{ template "Header" }}
+    {{ template "Menu"  }}
+    <div>
+        <div>
+            <h2>Balances</h2>
+        </div>
+        <div>
+            <table border="1" cellpadding="3" cellspacing="0">
+                <thead>
+                    <tr>
+                        <td>Account Number</td>
+                        <td>Name</td>
+                        <td>Balance</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range . }}
+                    <tr>
+                        <td> {{ .AccountID }} </td>
+                        <td>{{ .Name }} </td> 
+                        <td>{{ .Balance }} </td>
+                    </tr>
+                {{ end }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+  {{ template "Footer" }}
+{{ end }}
